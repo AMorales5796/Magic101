@@ -23,7 +23,8 @@ public class Goblin extends Enemies
     //ToString
     public String toString()
     {
-        String output = super.toString();
+        String output = "\nA Goblin appeared!";
+                output += "\n" + super.toString();
                output += "\nThis Goblin has " + numClaws + " claws.\n";
         return output;
     }//end of toString
