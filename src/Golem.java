@@ -8,9 +8,10 @@ public class Golem extends Enemies
     }
     public String type = "";
     //Constructor
-    public Golem (Element element, boolean hasClaws)
+    public Golem (String name, Element element, boolean hasClaws)
     {
         super(hasClaws);
+        super(name);
         this.element = element;
     }// end of constructor
 
@@ -20,9 +21,9 @@ public class Golem extends Enemies
         this.element = element;
     }// end of setter
     //Getter
-    public enum getElement
+    public String getElement()
     {
-        element;
+        return "This is a " + element.toString() + " type Golem.";
     }//end of getter
     //Brain Method
     public String Output() {
@@ -32,15 +33,15 @@ public class Golem extends Enemies
                 break;
 
             case ice:
-                type = "Fridays are better.";
+                type = "It just got chilly...";
                 break;
 
             case earth: case rock:
-                type = "Weekends are best.";
+                type = "Stand your ground!";
                 break;
 
             default:
-                type = "Midweek days are so-so.";
+                type = "We have a mysterious one here";
                 break;
         }
         return type;

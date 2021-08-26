@@ -2,7 +2,7 @@ public class Dragon extends Enemies
 {
     //Instance Variables
     private int wingSpan;// in yards
-    private String windForce;
+    private String windForce;// in mph & used for brain method
 
     //Constructor
     public Dragon (int wingSpan, boolean hasClaws)
@@ -23,7 +23,7 @@ public class Dragon extends Enemies
         return wingSpan;
     }// end of getter
 
-    //Brain Methods
+    //Brain Method
     public String whatIsWindForce()
     {
         if(wingSpan > 0 && wingSpan <= 10)
@@ -38,15 +38,16 @@ public class Dragon extends Enemies
         {
             windForce = "STRONG";
         }
-        return "This dragon's wind force is: " + windForce + ".";
+        return windForce;
     }// end of Brain Method
 
     //ToString
     public String toString()
     {
-        String output = "\nAwesome! (Kinda...) A Dragon appeared!";
+        String output = "\nAwesome! (Well kind of since...) A Dragon appeared!";
                 output += "\n" + super.toString();
                output += "\nThis Dragon's wings are " + wingSpan + " yards long.";
+               output += "\nThis dragon's wind force is: " + whatIsWindForce() +".";
                return output;
     }// end of toString
 }// end of class

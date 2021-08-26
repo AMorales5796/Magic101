@@ -2,6 +2,8 @@ public class Goblin extends Enemies
 {
     //Instance Variables
     private int numClaws;
+    //add another variable
+
     //Constructor
     public Goblin (int numClaws, boolean hasClaws)
     {
@@ -19,13 +21,32 @@ public class Goblin extends Enemies
         return numClaws;
     }//end of getter
     //Brain Methods
+    /* void gotAttacked()
+    {
+        if()
+        {
+
+        }
+    }*/
+    public int realisticNumOfClaws()
+    {
+        if (numClaws < 0)
+        {
+            setNumClaws(0);
+        }
+        else if (numClaws>10)
+        {
+            setNumClaws(10);
+        }
+        return numClaws;
+    }//end of method
 
     //ToString
     public String toString()
     {
         String output = "\nA Goblin appeared!";
                 output += "\n" + super.toString();
-               output += "\nThis Goblin has " + numClaws + " claws.\n";
+               output += "\nThis Goblin has " + realisticNumOfClaws() + " claws.\n";
         return output;
     }//end of toString
 }// end of class Goblin
