@@ -10,8 +10,7 @@ public class Golem extends Enemies
     //Constructor
     public Golem (String name, Element element, boolean hasClaws)
     {
-        super(hasClaws);
-        super(name);
+        super(name, hasClaws);
         this.element = element;
     }// end of constructor
 

@@ -5,9 +5,9 @@ public class Goblin extends Enemies
     //add another variable
 
     //Constructor
-    public Goblin (int numClaws, boolean hasClaws)
+    public Goblin (String name, int numClaws, boolean hasClaws)
     {
-        super(hasClaws);
+        super(name, hasClaws);
         this.numClaws = numClaws;
     }// end of constructor
     //Setters
@@ -21,13 +21,6 @@ public class Goblin extends Enemies
         return numClaws;
     }//end of getter
     //Brain Methods
-    /* void gotAttacked()
-    {
-        if()
-        {
-
-        }
-    }*/
     public int realisticNumOfClaws()
     {
         if (numClaws < 0)

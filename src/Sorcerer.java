@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Sorcerer
@@ -43,25 +44,43 @@ public class Sorcerer
 
     //Brain Methods***
     // Attack Method
-    public int Attack()
+    public String Attack()
     {
             Scanner scan = new Scanner(System.in);
-            System.out.println("What attack will you use? [Enter number])" +
+            System.out.println("What attack will you use? [Enter number]" +
                     "\n1. Lighting Flash" +
                     "\n2. Hail Storm" +
                     "\n3. Wind Slash");
             attackChoice = scan.nextInt();
-            return attackChoice;
+            return LvlUp(promptMessage);
     }//end of brain method
-    // Level Up & Power Up Method
-    /*public int LvlUp()
-    {
-        if(gotAttacked == )
-        {
-            setLevel();
-        }//if
+    String promptMessage = "";
 
-    }//end of brain method*/
+    public String LvlUp(String promptMessage)
+    {
+        Random rd = new Random(); // creating Random object
+        boolean outcome = rd.nextBoolean();
+        if(outcome == true)
+        {
+            setLevel(++level);
+            promptMessage = "Yay! You are now at level " + getLevel();
+        }//if
+        else if (outcome == false)
+        {
+            setHealth(--health);
+            promptMessage = "Sorry. Your attack was not effective. \nYour health is now " + getHealth() + " xp";
+        }
+        return promptMessage;
+    }//end of brain method
+    /*public String promptLvlUp()
+    {
+        return "Yay! You are now at level " + getLevel();
+    }
+
+    public String Fail()
+    {
+        return "Sorry. Your attack was not effective. \nYour health is now " + getHealth() + " xp";
+    }*/
 
     //ToString
     public String toString()

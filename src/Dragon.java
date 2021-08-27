@@ -5,9 +5,9 @@ public class Dragon extends Enemies
     private String windForce;// in mph & used for brain method
 
     //Constructor
-    public Dragon (int wingSpan, boolean hasClaws)
+    public Dragon (String name, int wingSpan, boolean hasClaws)
     {
-        super(hasClaws);
+        super(name, hasClaws);
         this.wingSpan = wingSpan;
     }// end of constructor
 

@@ -7,6 +7,7 @@ public abstract class Enemies
     //Constructor
     public Enemies (String name, boolean hasClaws)
     {
+        this.name = name;
         this.hasClaws = hasClaws;
     }// end of constructor
 
@@ -23,7 +24,6 @@ public abstract class Enemies
         return hasClaws;
     }//end of getter
     public String getName(){return name;}//end of getter
-
     //To String
     @Override
     public String toString()
