@@ -11,19 +11,26 @@ public class MagicDriver
         Golem ross = new Golem("ross", Golem.Element.fire,true);
         Golem bob = new Golem("bob",Golem.Element.ice,false);
         Sorcerer kim = new Sorcerer("Mage", 5, 20);
+        Sorcerer lily = new Sorcerer("Healer", 7, 30);
 
-
+        //Note: I did not explicitly state .toString because it was 
+        //giving me warnings that it was not necessary to add it.
+        //But the system.out.println does execute the .toString s
         System.out.println(kim);
         System.out.println(kyle);
-        kyle.setNumClaws(9);//changed num of claws
+        kyle.setNumClaws(20);//changed num of claws
+        kyle.realisticNumOfClaws();//making sure that the num of claws is reasonable
         System.out.println("Now Kyle has " + kyle.getNumClaws() + " claws.");
-        kim.Attack();/*
+        kim.Attack();//will ask for int input
+        System.out.println("Sirus' wing span is " + sirus.getWingSpan() " yards.");
         System.out.println(sirus);
+        sirus.setWingSpan(30);
+        System.out.println("Sirus' wings grew!" + sirus);
         System.out.println(ross);
         System.out.println(ross.getElement());
         System.out.println(bob);
         ross.setElement(Golem.Element.ice);//changed the Golem's element
-        System.out.println(ross.getElement());//it will print out the new element*/
+        System.out.println(ross.getElement());//it will print out the new element
 
         Enemies[] myEnemies = {kyle, gerome, sirus, bom, ross, bob};
 
@@ -32,8 +39,8 @@ public class MagicDriver
             enemyCounter++;
         }// end of for loop
 
-        System.out.println("You have " + enemyCounter + " enemies.");
-        for(int i = 0; i <= myEnemies.length-1; i++)
+        System.out.println("You have " + enemyCounter + " enemies."); // prints out the number of current enemies
+        for(int i = 0; i <= myEnemies.length-1; i++) // prints out the name of the current enemies
         {
 
             if(i== myEnemies.length-1)
